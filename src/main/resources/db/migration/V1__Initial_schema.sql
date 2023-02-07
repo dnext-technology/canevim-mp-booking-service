@@ -1,4 +1,4 @@
-CREATE TABLE requesters
+CREATE TABLE IF NOT EXISTS requesters
 (
     id                   SERIAL PRIMARY KEY,
     identity_number      varchar(255) NOT NULL,
@@ -21,7 +21,7 @@ CREATE TABLE requesters
     version              INT          NOT NULL
 );
 
-CREATE TABLE offerers
+CREATE TABLE IF NOT EXISTS offerers
 (
     id                   SERIAL PRIMARY KEY,
     identity_number      varchar(255) NOT NULL,
