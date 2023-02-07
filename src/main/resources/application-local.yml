@@ -1,0 +1,14 @@
+server:
+  port: 8090
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/zorgundostu
+    username: test
+    password: test
+    driver-class-name: org.postgresql.Driver
+  flyway:
+    url: jdbc:postgresql://localhost:5432/booking
+    user: test
+    password: test
+    baseline-on-migrate: true
