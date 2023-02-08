@@ -7,8 +7,3 @@ spring:
     username: postgres
     password: 123123a
     driver-class-name: org.postgresql.Driver
-  flyway:
-    url: jdbc:postgresql://localhost:5432/zorgundostu
-    user: postgres
-    password: 123123a
-    baseline-on-migrate: true
