@@ -3,6 +3,7 @@ package com.zorgundostu.booking.model.offer;
 
 public record OffererDto(
         Long id,
+        String code,
         String firstName,
         String lastName,
         String city,
@@ -14,6 +15,7 @@ public record OffererDto(
         String accommodationType,
         String accommodationPeriod,
         String note,
-        String status
+        String status,
+        String createdDate
 ) {
 }

@@ -11,6 +11,7 @@ import org.springframework.data.annotation.Version;
 public record RequesterDto(
 
         Long id,
+        String code,
         String firstName,
 
         String lastName,
@@ -23,8 +24,6 @@ public record RequesterDto(
         String accommodationPeriod,
         String note,
         String status,
-        LocalDateTime createdDate,
-        LocalDateTime lastModifiedDate,
-        int version
+        String createdDate
 ) {
 }

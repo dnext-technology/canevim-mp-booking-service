@@ -38,4 +38,9 @@ public class BookingController implements BookingApi{
     public ResponseEntity<Object> getAllOfferers(Map<String, String> header, int page, int size) {
         return ResponseEntity.ok(bookingService.getAllActiveOfferers(page, size));
     }
+
+    @Override
+    public ResponseEntity<Object> getStatistics(Map<String, String> header) {
+        return ResponseEntity.ok(bookingService.getStatistics());
+    }
 }

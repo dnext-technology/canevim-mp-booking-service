@@ -19,6 +19,8 @@ public class Offerer {
     @Id
     private Long id;
     @NotNull
+    private String code;
+    @NotNull
     private String identityNumber;
     @NotNull
     private String firstName;

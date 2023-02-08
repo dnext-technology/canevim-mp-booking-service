@@ -6,6 +6,7 @@ import com.zorgundostu.booking.model.offer.OffererCreateDto;
 import com.zorgundostu.booking.model.offer.OffererDto;
 import com.zorgundostu.booking.model.request.RequesterCreateDto;
 import com.zorgundostu.booking.model.request.RequesterDto;
+import com.zorgundostu.booking.model.statistics.StatisticDto;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -84,6 +85,18 @@ public interface BookingApi {
     ResponseEntity<Object> getAllOfferers(@RequestHeader Map<String, String> header,
                                           @RequestParam(defaultValue = "0", required = false) int page,
                                           @RequestParam(defaultValue = "10", required = false) int size);
+
+    @Operation(operationId = "getStatistics", summary = "Get statistics of offer and requester.")
+    @ApiResponses(value = {@ApiResponse(responseCode = "200", description = "SUCCESS", content = @Content(array = @ArraySchema(schema = @Schema(implementation = StatisticDto.class)))),
+            @ApiResponse(responseCode = "400", description = "Bad Request", content = @Content(schema = @Schema(implementation = Error.class))),
+            @ApiResponse(responseCode = "401", description = "Unauthorized", content = @Content(schema = @Schema(implementation = Error.class))),
+            @ApiResponse(responseCode = "403", description = "Forbidden", content = @Content(schema = @Schema(implementation = Error.class))),
+            @ApiResponse(responseCode = "404", description = "Not Found", content = @Content(schema = @Schema(implementation = Error.class))),
+            @ApiResponse(responseCode = "405", description = "Method Not Allowed", content = @Content(schema = @Schema(implementation = Error.class))),
+            @ApiResponse(responseCode = "500", description = "Internal Server Error", content = @Content(schema = @Schema(implementation = Error.class)))
+    })
+    @GetMapping(value = "stats", produces = {"application/json;charset=utf-8"})
+    ResponseEntity<Object> getStatistics(@RequestHeader Map<String, String> header);
 
 
 }
