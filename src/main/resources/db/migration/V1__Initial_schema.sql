@@ -1,6 +1,7 @@
 CREATE TABLE IF NOT EXISTS requesters
 (
     id                   SERIAL PRIMARY KEY,
+    code                 varchar(255) NOT NULL,
     identity_number      varchar(255) NOT NULL,
     first_name           varchar(255) NOT NULL,
     last_name            varchar(255) NOT NULL,
@@ -24,6 +25,7 @@ CREATE TABLE IF NOT EXISTS requesters
 CREATE TABLE IF NOT EXISTS offerers
 (
     id                   SERIAL PRIMARY KEY,
+    code                 varchar(255) NOT NULL,
     identity_number      varchar(255) NOT NULL,
     first_name           varchar(255) NOT NULL,
     last_name            varchar(255) NOT NULL,
