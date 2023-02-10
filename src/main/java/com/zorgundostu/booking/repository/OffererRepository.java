@@ -14,7 +14,7 @@ import org.springframework.stereotype.Repository;
 public interface OffererRepository extends CrudRepository<Offerer, Long> {
     Page<Offerer> findAll(Pageable pageable);
     @Query("""
-                 SELECT 'offerer' as type, COUNT(DISTINCT o.identity_number) as "person" , SUM(o.guest_capacity) as "capacity" FROM offerers o;
+                 SELECT 'offerer' as type, COALESCE(COUNT(DISTINCT o.identity_number),0) as "person" , COALESCE(SUM(o.guest_capacity),0) as "capacity" FROM offerers o;
             """)
     StatisticDto findOffererStatistics();
 }

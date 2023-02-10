@@ -45,7 +45,7 @@ public class BookingService {
     }
 
     public Page<RequesterDto> getAllActiveRequesters(int page, int size){
-        PageRequest pageable = PageRequest.of(page, size, Sort.Direction.ASC, "createdDate");
+        PageRequest pageable = PageRequest.of(page, size, Sort.Direction.DESC, "createdDate");
         return requesterRepository.findAll(pageable).map(bookingMapper::toDto);
     }
 
@@ -58,7 +58,7 @@ public class BookingService {
     }
 
     public Page<OffererDto> getAllActiveOfferers(int page, int size){
-        PageRequest pageable = PageRequest.of(page, size, Sort.Direction.ASC, "createdDate");
+        PageRequest pageable = PageRequest.of(page, size, Sort.Direction.DESC, "createdDate");
         return offererRepository.findAll(pageable).map(bookingMapper::toDto);
     }
 
