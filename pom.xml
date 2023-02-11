@@ -2,16 +2,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.zorgundostu.booking</groupId>
-	<artifactId>mp-booking-service</artifactId>
+	<groupId>com.zorgundostu.shelter</groupId>
+	<artifactId>zgd-shelter-service</artifactId>
 	<version>1.0.0</version>
-	<name>mp-booking-service</name>
-	<description>Booking service for zorgundostu project</description>
+	<name>zgd-shelter-service</name>
+	<description>Sheltering service for zorgundostu project</description>
 
 	<properties>
 		<java.version>17</java.version>
 		<springdoc.version>2.0.2</springdoc.version>
 		<org.mapstruct.version>1.5.3.Final</org.mapstruct.version>
+		<gson.version>2.10.1</gson.version>
 	</properties>
 
 	<parent>
@@ -58,6 +59,11 @@
 			<groupId>org.springdoc</groupId>
 			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
 			<version>${springdoc.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>${gson.version}</version>
 		</dependency>
 	</dependencies>
 

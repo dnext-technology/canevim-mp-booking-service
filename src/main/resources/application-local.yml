@@ -1,11 +1,29 @@
 server:
   port: 8090
   servlet:
-    context-path: /api/mp-booking/v1
+    context-path: /api/zgd-shelter/v1
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/booking
+    url: jdbc:postgresql://localhost:5432/zorgundostu
     username: test
     password: test
     driver-class-name: org.postgresql.Driver
+
+shelter:
+  http:
+    client:
+      timeout: 30
+
+endpoints:
+  integration: https://zorgundostu.com/api/zgd-integration/v1/shelters
+
+openapi:
+  app:
+    title: "Shelter API"
+    description: "This project includes shelter operations"
+    version: 1.0
+    contact : "Contact Support"
+    email: "tuncay@talls.tech"
+    licence: "Shelter 1.0"
+    url: "https://www.talls.tech"
