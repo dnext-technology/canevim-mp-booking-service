@@ -1,12 +1,12 @@
 package com.zorgundostu.shelter.model.notification;
 
-import java.util.List;
-
 import com.vladmihalcea.hibernate.type.json.JsonType;
-import com.zorgundostu.integration.domain.notification.model.BaseEntity;
+import com.zorgundostu.shelter.model.BaseEntity;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.Type;
+
+import java.util.List;
 
 @Data
 @Entity(name = "Notification")
