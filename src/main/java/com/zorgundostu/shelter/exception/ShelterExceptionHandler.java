@@ -10,6 +10,7 @@ import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -24,8 +25,9 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 @RestControllerAdvice
 public class ShelterExceptionHandler extends ResponseEntityExceptionHandler {
 
-    @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException exception, HttpHeaders headers, HttpStatus httpStatus, WebRequest webRequest) {
+
+    @Override
+    protected ResponseEntity<Object>  handleMethodArgumentNotValid(MethodArgumentNotValidException exception, HttpHeaders headers, HttpStatusCode httpStatus, WebRequest webRequest){
         final String path = webRequest.getDescription(false);
 
         List<String> validationErrors = exception.getBindingResult()
@@ -34,17 +36,18 @@ public class ShelterExceptionHandler extends ResponseEntityExceptionHandler {
                 .map(error -> error.getField() + " : " + error.getDefaultMessage())
                 .collect(Collectors.toList());
 
-        ShelterError shelterError = ShelterError.builder()
+        ShelterError sordmanError = ShelterError.builder()
                 .timestamp(LocalDateTime.now())
                 .status(httpStatus.value())
-                .message(httpStatus.name())
+                .message(httpStatus.toString())
                 .path(path)
                 .detail(validationErrors.toString())
                 .type(exception.getClass().getSimpleName())
                 .build();
 
-        return new ResponseEntity<>(shelterError, httpStatus);
+        return new ResponseEntity<>(sordmanError, httpStatus);
     }
+
 
     @ExceptionHandler(RuntimeException.class)
     public ResponseEntity<Object> handleException(WebRequest webRequest, Exception exception) {
@@ -67,7 +70,7 @@ public class ShelterExceptionHandler extends ResponseEntityExceptionHandler {
     }
 
     @ExceptionHandler(ShelterException.class)
-    public ResponseEntity<Object> handleSordmanException(WebRequest webRequest, ShelterException shelterException) {
+    public ResponseEntity<Object> handleShelterException(WebRequest webRequest, ShelterException shelterException) {
         final String path = webRequest.getDescription(false);
 
         ShelterError shelterError = ShelterError.builder()

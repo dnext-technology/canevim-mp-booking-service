@@ -16,7 +16,9 @@ shelter:
       timeout: 30
 
 endpoints:
-  integration: https://zorgundostu.com/api/zgd-integration/v1/shelters
+  integration:
+    shelter: "http://localhost:8092/api/zgd-integration/v1/integrations/shelters"
+    notification: "http://localhost:8092/api/zgd-integration/v1/integrations/notifications"
 
 openapi:
   app:

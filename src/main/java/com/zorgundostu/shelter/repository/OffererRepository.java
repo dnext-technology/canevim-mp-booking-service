@@ -2,7 +2,7 @@ package com.zorgundostu.shelter.repository;
 
 import java.util.UUID;
 
-import com.zorgundostu.shelter.model.provider.Offerer;
+import com.zorgundostu.shelter.model.offer.Offerer;
 import com.zorgundostu.shelter.model.statistics.StatisticDto;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

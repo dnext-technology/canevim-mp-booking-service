@@ -1,17 +1,17 @@
 package com.zorgundostu.shelter.service;
 
-import static com.zorgundostu.shelter.util.ShelterUtils.generateShelterCode;
+import static com.zorgundostu.shelter.service.util.ShelterUtils.generateShelterCode;
 
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-import com.zorgundostu.shelter.client.ShelterHttpClient;
+import com.zorgundostu.shelter.client.ShelterHttpUtils;
 import com.zorgundostu.shelter.constant.AccommodationTypes;
 import com.zorgundostu.shelter.constant.ShelterTypes;
 import com.zorgundostu.shelter.constant.StatusTypes;
-import com.zorgundostu.shelter.model.provider.OffererCreateDto;
-import com.zorgundostu.shelter.model.provider.OffererDto;
+import com.zorgundostu.shelter.model.offer.OffererCreateDto;
+import com.zorgundostu.shelter.model.offer.OffererDto;
 import com.zorgundostu.shelter.model.request.RequesterCreateDto;
 import com.zorgundostu.shelter.model.request.RequesterDto;
 import com.zorgundostu.shelter.model.statistics.StatisticDto;
@@ -62,10 +62,12 @@ public class ShelterService {
         offerer.setCode(generateShelterCode(offerer.getFirstName(), offerer.getLastName(), "O"));
         var savedOfferer = offererRepository.save(offerer);
         var offerDto = shelterMapper.toDto(savedOfferer);
+
         if (AccommodationTypes.APARTMENT.accommodation().equalsIgnoreCase(savedOfferer.getAccommodationType()) || AccommodationTypes.DETACHED_HOUSE.accommodation().equalsIgnoreCase(savedOfferer.getAccommodationType())) {
-            asyncTaskService.callForNotifyingMinistry(header, offerDto);
+            asyncTaskService.callForNotifyingMinistry(savedOfferer);
         }
-        asyncTaskService.sendNotification(header, savedOfferer.getFirstName(), savedOfferer.getLastName(), savedOfferer.getPhone(), savedOfferer.getCode());
+
+        asyncTaskService.sendNotification(savedOfferer.getFirstName(), savedOfferer.getLastName(), savedOfferer.getPhone(), savedOfferer.getCode());
         return offerDto;
     }
 

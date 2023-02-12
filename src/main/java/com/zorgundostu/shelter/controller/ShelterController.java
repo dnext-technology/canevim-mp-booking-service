@@ -4,7 +4,7 @@ import java.util.Map;
 
 import com.zorgundostu.shelter.constant.ShelterTypes;
 import com.zorgundostu.shelter.constant.StatusTypes;
-import com.zorgundostu.shelter.model.provider.OffererCreateDto;
+import com.zorgundostu.shelter.model.offer.OffererCreateDto;
 import com.zorgundostu.shelter.model.request.RequesterCreateDto;
 import com.zorgundostu.shelter.service.ShelterService;
 import lombok.extern.slf4j.Slf4j;

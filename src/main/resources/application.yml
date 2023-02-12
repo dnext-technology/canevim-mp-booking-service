@@ -10,3 +10,17 @@ spring:
     password: postgres
     driver-class-name: org.postgresql.Driver
 
+endpoints:
+  integration:
+    shelter: "http://localhost:8092/api/zgd-integration/v1/integrations/shelters"
+    notification: "http://localhost:8092/api/zgd-integration/v1/integrations/notifications"
+
+openapi:
+  app:
+    title: "Shelter API"
+    description: "This project includes shelter operations"
+    version: 1.0
+    contact : "Contact Support"
+    email: "tuncay@talls.tech"
+    licence: "Shelter 1.0"
+    url: "https://www.talls.tech"

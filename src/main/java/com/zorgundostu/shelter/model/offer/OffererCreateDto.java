@@ -1,8 +1,8 @@
-package com.zorgundostu.shelter.model.provider;
+package com.zorgundostu.shelter.model.offer;
 
 import java.time.LocalDate;
-import jakarta.validation.constraints.NotNull;
 
+import jakarta.validation.constraints.NotNull;
 
 public record OffererCreateDto(
         @NotNull

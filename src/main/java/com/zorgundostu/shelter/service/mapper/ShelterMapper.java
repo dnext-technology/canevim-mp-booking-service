@@ -1,8 +1,8 @@
 package com.zorgundostu.shelter.service.mapper;
 
-import com.zorgundostu.shelter.model.provider.Offerer;
-import com.zorgundostu.shelter.model.provider.OffererCreateDto;
-import com.zorgundostu.shelter.model.provider.OffererDto;
+import com.zorgundostu.shelter.model.offer.Offerer;
+import com.zorgundostu.shelter.model.offer.OffererCreateDto;
+import com.zorgundostu.shelter.model.offer.OffererDto;
 import com.zorgundostu.shelter.model.request.Requester;
 import com.zorgundostu.shelter.model.request.RequesterCreateDto;
 import com.zorgundostu.shelter.model.request.RequesterDto;

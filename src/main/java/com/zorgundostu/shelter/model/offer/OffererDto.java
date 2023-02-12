@@ -1,4 +1,4 @@
-package com.zorgundostu.shelter.model.provider;
+package com.zorgundostu.shelter.model.offer;
 
 
 import java.time.LocalDate;
