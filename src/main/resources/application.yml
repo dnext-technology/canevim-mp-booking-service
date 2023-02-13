@@ -5,10 +5,14 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://zgd-db-dev:5432/zgd-dev
+    url: jdbc:postgresql://postgres:5432/canevim
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
 
 endpoints:
   integration:
