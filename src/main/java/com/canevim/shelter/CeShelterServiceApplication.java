@@ -7,10 +7,10 @@ import org.springframework.scheduling.annotation.EnableAsync;
 
 @SpringBootApplication
 @EnableAsync
-public class ZgdShelterServiceApplication {
+public class CeShelterServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ZgdShelterServiceApplication.class, args);
+		SpringApplication.run(CeShelterServiceApplication.class, args);
 	}
 
 }

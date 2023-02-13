@@ -1,7 +1,7 @@
 server:
   port: 8090
   servlet:
-    context-path: /api/zgd-shelter/v1
+    context-path: /api/ce-shelter/v1
 
 spring:
   datasource:
@@ -17,8 +17,8 @@ shelter:
 
 endpoints:
   integration:
-    shelter: "http://localhost:8092/api/zgd-integration/v1/integrations/shelters"
-    notification: "http://localhost:8092/api/zgd-integration/v1/integrations/notifications"
+    shelter: "http://localhost:8092/api/ce-integration/v1/integrations/shelters"
+    notification: "http://localhost:8092/api/ce-integration/v1/integrations/notifications"
 
 openapi:
   app:

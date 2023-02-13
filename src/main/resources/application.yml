@@ -5,7 +5,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://postgres:5432/canevim
+    url: jdbc:postgresql://ce-db-dev:5432/ce-dev
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver
@@ -13,11 +13,13 @@ spring:
     hibernate:
       ddl-auto: create
     database-platform: org.hibernate.dialect.PostgreSQLDialect
+  main:
+    allow-bean-definition-overriding: true
 
 endpoints:
   integration:
-    shelter: "http://localhost:8092/api/zgd-integration/v1/integrations/shelters"
-    notification: "http://localhost:8092/api/zgd-integration/v1/integrations/notifications"
+    shelter: "http://localhost:8092/api/ce-integration/v1/integrations/shelters"
+    notification: "http://localhost:8092/api/ce-integration/v1/integrations/notifications"
 
 openapi:
   app:

@@ -3,9 +3,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.canevim.shelter</groupId>
-	<artifactId>zgd-shelter-service</artifactId>
+	<artifactId>ce-shelter-service</artifactId>
 	<version>1.0.0</version>
-	<name>zgd-shelter-service</name>
+	<name>ce-shelter-service</name>
 	<description>Sheltering service for canevim project</description>
 
 	<properties>
@@ -30,6 +30,10 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

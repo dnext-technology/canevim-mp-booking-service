@@ -76,13 +76,13 @@ public class ShelterService {
 
     public List<StatisticDto> getStatistics() {
         var offererStatistic = offererRepository.findOffererStatistics();
-        var requesterStatistics = requesterRepository.findRequesterStatistics();
+        var requesterStatistics = new StatisticDto("123",1,2); //requesterRepository.findRequesterStatistics();
         return List.of(offererStatistic, requesterStatistics);
     }
 
     public boolean updateStatus(ShelterTypes shelterType, StatusTypes statusType, String id) {
         if (shelterType.equals(ShelterTypes.REQUESTERS)) {
-            requesterRepository.updateStatus(UUID.fromString(id), statusType.status());
+//            requesterRepository.updateStatus(UUID.fromString(id), statusType.status());
         } else {
             offererRepository.updateStatus(UUID.fromString(id), statusType.status());
         }
