@@ -46,7 +46,7 @@ public interface ShelterApi {
             @ApiResponse(responseCode = "409", description = "Conflict", content = @Content(schema = @Schema(implementation = ShelterError.class))),
             @ApiResponse(responseCode = "500", description = "Internal Server Error", content = @Content(schema = @Schema(implementation = ShelterError.class)))
     })
-    @PostMapping(value = "requesters", produces = {"application/json;charset=utf-8"})
+    @PostMapping(value = "/requesters", produces = {"application/json;charset=utf-8"})
     ResponseEntity<Object> createRequester(@RequestHeader Map<String, String> header, @Valid @RequestBody RequesterCreateDto requesterCreateDto);
 
     @Operation(operationId = "getAllRequestersPaginated", summary = "Get all requesters items with pagination.")

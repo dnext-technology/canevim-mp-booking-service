@@ -11,7 +11,7 @@ spring:
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     database-platform: org.hibernate.dialect.PostgreSQLDialect
   main:
     allow-bean-definition-overriding: true
@@ -30,3 +30,9 @@ openapi:
     email: "tuncay@talls.tech"
     licence: "Shelter 1.0"
     url: "https://www.talls.tech"
+
+logging:
+  level:
+    ROOT: INFO
+    org.hibernate.SQL: INFO
+    org.springframework: INFO

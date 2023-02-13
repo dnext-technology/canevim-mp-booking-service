@@ -60,8 +60,10 @@ public class Offerer {
     private String accommodationType;
     @Column(name = "accommodation_period")
     private String accommodationPeriod;
-    @Column(name = "accommodation_availability_date")
-    private LocalDate accommodationAvailabilityDate;
+    @Column(name = "accommodation_availability_start_date")
+    private LocalDate accommodationAvailabilityStartDate;
+    @Column(name = "accommodation_availability_end_date")
+    private LocalDate accommodationAvailabilityEndDate;
     @Column(name = "accommodation_availability_day")
     private int accommodationAvailabilityDay;
     @Column(name = "room_type")
@@ -82,4 +84,6 @@ public class Offerer {
     @Column(name = "version")
     @Version
     private int version;
+
+
 }

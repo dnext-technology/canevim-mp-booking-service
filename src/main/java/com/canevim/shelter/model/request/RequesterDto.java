@@ -1,6 +1,9 @@
 package com.canevim.shelter.model.request;
 
 
+import com.canevim.shelter.model.request.guest.GuestDto;
+
+import java.util.List;
 import java.util.UUID;
 
 
@@ -17,6 +20,8 @@ public record RequesterDto(
         boolean transportationRequired,
         String note,
         String status,
-        String createdDate
+        String createdDate,
+        List<GuestDto> guestList
+
 ) {
 }

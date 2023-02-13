@@ -1,6 +1,9 @@
 package com.canevim.shelter.model.request;
 
 import java.time.LocalDate;
+import java.util.List;
+
+import com.canevim.shelter.model.request.guest.GuestCreateDto;
 import jakarta.validation.constraints.NotNull;
 
 
@@ -29,6 +32,8 @@ public record RequesterCreateDto(
         String accommodationPeriod,
         boolean transportationRequired,
         String note,
-        String status
+        String status,
+        List<GuestCreateDto> guestList
+
 ) {
 }

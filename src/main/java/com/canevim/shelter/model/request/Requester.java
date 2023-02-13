@@ -2,8 +2,10 @@ package com.canevim.shelter.model.request;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
+import com.canevim.shelter.model.request.guest.Guest;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
@@ -77,5 +79,8 @@ public class Requester {
     @Version
     @Column(name = "version")
     private int version;
+
+    @OneToMany(mappedBy = "requester", cascade = CascadeType.ALL)
+    private List<Guest> guestList;
 
 }

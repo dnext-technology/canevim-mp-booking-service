@@ -1,8 +1,8 @@
 package com.canevim.shelter.model.offer;
 
-import java.time.LocalDate;
-
 import jakarta.validation.constraints.NotNull;
+
+import java.time.LocalDate;
 
 public record OffererCreateDto(
         @NotNull
@@ -28,7 +28,8 @@ public record OffererCreateDto(
         @NotNull
         String accommodationType,
         String accommodationPeriod,
-        LocalDate accommodationAvailabilityDate,
+        LocalDate accommodationAvailabilityStartDate,
+        LocalDate accommodationAvailabilityEndDate,
         int accommodationAvailabilityDay,
         String roomType,
         boolean furnished,

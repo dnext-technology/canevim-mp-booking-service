@@ -37,7 +37,7 @@ public class ShelterUtils {
           offerer.getRoomType(),
           offerer.getGuestCapacity(),
           offerer.isFurnished(),
-          offerer.getAccommodationAvailabilityDate().toString(),
+          offerer.getAccommodationAvailabilityStartDate().toString(),
           offerer.getAccommodationAvailabilityDay(),
           offerer.getNote(),
           "CANEVIM"

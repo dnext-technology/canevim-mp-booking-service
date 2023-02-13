@@ -7,6 +7,7 @@ import java.util.UUID;
 import com.canevim.shelter.constant.AccommodationTypes;
 import com.canevim.shelter.constant.ShelterTypes;
 import com.canevim.shelter.constant.StatusTypes;
+import com.canevim.shelter.exception.ShelterException;
 import com.canevim.shelter.repository.OffererRepository;
 import com.canevim.shelter.repository.RequesterRepository;
 import com.canevim.shelter.service.mapper.ShelterMapper;
@@ -20,6 +21,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -45,6 +47,7 @@ public class ShelterService {
         var requester = shelterMapper.toDao(requesterCreateDto);
         requester.setStatus(StatusTypes.ACTIVE.status());
         requester.setCode(ShelterUtils.generateShelterCode(requester.getFirstName(), requester.getLastName(), "R"));
+        requester.getGuestList().stream().forEach(guest -> guest.setRequester(requester));
         var savedRequester = requesterRepository.save(requester);
         return shelterMapper.toDto(savedRequester);
     }
@@ -56,6 +59,10 @@ public class ShelterService {
 
     public OffererDto createOfferer(Map<String, String> header, OffererCreateDto offererCreateDto) {
         var offerer = shelterMapper.toDao(offererCreateDto);
+
+        if (offerer.getAccommodationAvailabilityStartDate().isAfter(offerer.getAccommodationAvailabilityEndDate())){
+             throw new ShelterException(HttpStatus.BAD_REQUEST,"Konaklama başlangıç tarihi, konaklama bitiş tarihinden sonra olamaz!");
+        }
         offerer.setStatus(StatusTypes.ACTIVE.status());
         offerer.setCode(ShelterUtils.generateShelterCode(offerer.getFirstName(), offerer.getLastName(), "O"));
         var savedOfferer = offererRepository.save(offerer);

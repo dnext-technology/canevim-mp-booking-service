@@ -7,6 +7,7 @@ import java.util.UUID;
 
 public record OffererDto(
         UUID id,
+        String identityNumber,
         String firstName,
         String lastName,
         String city,
@@ -19,7 +20,8 @@ public record OffererDto(
         String accommodationPeriod,
         String note,
         String status,
-        LocalDate accommodationAvailabilityDate,
+        LocalDate accommodationAvailabilityStartDate,
+        LocalDate accommodationAvailabilityEndDate,
         int accommodationAvailabilityDay,
         String roomType,
         boolean furnished,
