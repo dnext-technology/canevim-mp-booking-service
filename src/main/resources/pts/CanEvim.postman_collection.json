@@ -1,0 +1,135 @@
+{
+	"info": {
+		"_postman_id": "3002bda7-4923-45f6-8a0b-1d91ed402136",
+		"name": "CanEvim",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24957752"
+	},
+	"item": [
+		{
+			"name": "Booking",
+			"item": [
+				{
+					"name": "getAllRequesters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/mp-booking/v1/shelters/requesters",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"mp-booking",
+								"v1",
+								"shelters",
+								"requesters"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllOfferers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/mp-booking/v1/shelters/offerers",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"mp-booking",
+								"v1",
+								"shelters",
+								"offerers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createRequester",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"identityNumber\": \"12312\",\n    \"firstName\": \"arda\",\n    \"lastName\":\"sen\",\n    \"birthDate\":\"14.11.2023\",\n    \"email\": \"asd@gmail.com\",\n    \"phone\":\"123123\",\n    \"city\":\"Istanbul\",\n    \"district\":\"Beykoz\",\n    \"town\":\"Incırköy\",\n    \"addressDetail\":\"123123\",\n    \"adultNumber\":3,\n    \"childNumber\":2,\n    \"accommodationPeriod\":\"adsas\",\n    \"transporttationRequired\":true,\n    \"note\":\"123123\",\n    \"guestList\": [\n        {\n            \"identityNumber\": \"12312\",\n            \"firstName\": \"aaaa\",\n            \"lastName\": \"bbbb\"\n        },\n        {\n            \"identityNumber\": \"12312\",\n            \"firstName\": \"aaaa\",\n            \"lastName\": \"bbbb\"\n        }\n    ]\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/mp-booking/v1/shelters/requesters",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"mp-booking",
+								"v1",
+								"shelters",
+								"requesters"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createOfferers",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"identityNumber\": \"12312\",\n    \"firstName\": \"arada\",\n    \"lastName\": \"sen\",\n    \"birthDate\": \"14.11.2023\",\n    \"email\": \"asd@gmail.com\",\n    \"phone\": \"123123\",\n    \"city\": \"Istanbul\",\n    \"district\": \"Beykoz\",\n    \"town\": \"Incırköy\",\n    \"neighborhood\": \"Incırköy\",\n    \"addressDetail\": \"123123\",\n    \"guestCapacity\": 2,\n    \"accommodationType\": \"asda\",\n    \"accommodationPeriod\": \"12312\",\n    \"accommodationAvailabilityStartDate\": \"13.11.2023\",\n    \"accommodationAvailabilityEndDate\": \"14.11.2023\",\n    \"accommodationAvailabilityDay\": 2,\n    \"roomType\": \"3+1\",\n    \"furnished\": true,\n    \"note\": \"123123\"\n    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/mp-booking/v1/shelters/offerers",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"mp-booking",
+								"v1",
+								"shelters",
+								"offerers"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
