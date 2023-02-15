@@ -67,7 +67,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"identityNumber\": \"12312\",\n    \"firstName\": \"arda\",\n    \"lastName\":\"sen\",\n    \"birthDate\":\"14.11.2023\",\n    \"email\": \"asd@gmail.com\",\n    \"phone\":\"123123\",\n    \"city\":\"Istanbul\",\n    \"district\":\"Beykoz\",\n    \"town\":\"Incırköy\",\n    \"addressDetail\":\"123123\",\n    \"adultNumber\":3,\n    \"childNumber\":2,\n    \"accommodationPeriod\":\"adsas\",\n    \"transporttationRequired\":true,\n    \"note\":\"123123\",\n    \"guestList\": [\n        {\n            \"identityNumber\": \"12312\",\n            \"firstName\": \"aaaa\",\n            \"lastName\": \"bbbb\"\n        },\n        {\n            \"identityNumber\": \"12312\",\n            \"firstName\": \"aaaa\",\n            \"lastName\": \"bbbb\"\n        }\n    ]\n\n}",
+							"raw": "{\n    \"identityNumber\": \"12312\",\n    \"firstName\": \"arda\",\n    \"lastName\":\"sen\",\n    \"birthDate\":\"14.11.2023\",\n    \"email\": \"asd@gmail.com\",\n    \"phone\":\"123123\",\n    \"city\":\"Istanbul\",\n    \"district\":\"Beykoz\",\n    \"town\":\"Incırköy\",\n    \"addressDetail\":\"123123\",\n    \"adultNumber\":3,\n    \"childNumber\":2,\n    \"accommodationPeriod\":\"adsas\",\n    \"transportationRequired\":true,\n    \"note\":\"123123\",\n    \"guestList\": [\n        {\n            \"identityNumber\": \"12312\",\n            \"firstName\": \"aaaa\",\n            \"lastName\": \"bbbb\"\n        },\n        {\n            \"identityNumber\": \"12312\",\n            \"firstName\": \"aaaa\",\n            \"lastName\": \"bbbb\"\n        }\n    ]\n\n}",
 							"options": {
 								"raw": {
 									"language": "json"
